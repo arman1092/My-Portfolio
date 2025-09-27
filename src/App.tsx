@@ -14,7 +14,7 @@ import {
   Calendar,
   Users,
   Zap,
-  Star
+  Star,
   ExternalLink,
   Shield,
   Network
@@ -229,12 +229,12 @@ function App() {
                 </div>
                 
                 <p className="text-gray-300 mb-6 leading-relaxed">
-                  A comprehensive identity verification and event management system built with PHP & MySQL. 
+                  A comprehensive identity verification and event management system built with core full stack PHP & MySQL. 
                   Features secure QR-based authentication, trust scoring algorithms, and real-time verification dashboards.
                 </p>
                 
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {['PHP', 'MySQL', 'REST APIs', 'QR Authentication', 'Real-time Processing'].map((tech, index) => (
+                  {['Core PHP', 'MySQL', 'REST APIs', 'QR Authentication', 'Real-time Processing'].map((tech, index) => (
                     <span key={index} className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium border border-blue-500/30">
                       {tech}
                     </span>
@@ -263,17 +263,17 @@ function App() {
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-white mb-1">HIdentity Nexus</h3>
-                    <p className="text-purple-400 font-semibold">Advanced Identity Network</p>
+                    <p className="text-purple-400 font-semibold">Event Management Platform</p>
                   </div>
                 </div>
                 
                 <p className="text-gray-300 mb-6 leading-relaxed">
-                  Next-generation identity management platform with enhanced networking capabilities. 
-                  Integrates advanced verification algorithms, multi-layer security protocols, and seamless user experience design.
+                  Advanced event management platform built with core full stack PHP. 
+                  Integrates comprehensive event planning, attendee management, real-time updates, and secure identity verification systems.
                 </p>
                 
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {['Advanced PHP', 'Security Protocols', 'Network Integration', 'Multi-layer Auth', 'Enhanced UX'].map((tech, index) => (
+                  {['Core PHP', 'Event Management', 'Attendee Tracking', 'Real-time Updates', 'Integrated Verification'].map((tech, index) => (
                     <span key={index} className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm font-medium border border-purple-500/30">
                       {tech}
                     </span>
