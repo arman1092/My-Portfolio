@@ -15,6 +15,9 @@ import {
   Users,
   Zap,
   Star
+  ExternalLink,
+  Shield,
+  Network
 } from 'lucide-react';
 
 function App() {
@@ -25,7 +28,7 @@ function App() {
     setIsVisible(true);
     
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'experience', 'education', 'contact'];
+      const sections = ['home', 'projects', 'about', 'skills', 'experience', 'education', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -56,7 +59,7 @@ function App() {
     { category: 'Languages', items: ['Java', 'PHP', 'Python', 'JavaScript', 'C++', 'C'], icon: <Code className="w-6 h-6" /> },
     { category: 'Frameworks & Libraries', items: ['Laravel', 'React.js', 'MERN Stack', 'jQuery', 'Bootstrap', 'TailwindCSS', 'Alpine.js'], icon: <Globe className="w-6 h-6" /> },
     { category: 'Databases', items: ['MySQL', 'SQLite', 'MongoDB'], icon: <Database className="w-6 h-6" /> },
-    { category: 'Specialized Skills', items: ['AI-Powered Projects', 'REST APIs', 'Web Development', 'Cloud Computing'], icon: <Brain className="w-6 h-6" /> }
+    { category: 'Specialized Skills', items: ['AI-Powered Projects (Open Source Models)', 'MERN Stack Projects', 'REST APIs', 'Web Development', 'Cloud Computing'], icon: <Brain className="w-6 h-6" /> }
   ];
 
   const experiences = [
@@ -131,7 +134,7 @@ function App() {
               MD ARMAN
             </div>
             <div className="hidden md:flex space-x-8">
-              {['Home', 'About', 'Skills', 'Experience', 'Education', 'Contact'].map((item) => (
+              {['Home', 'Projects', 'About', 'Skills', 'Experience', 'Education', 'Contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
@@ -177,10 +180,10 @@ function App() {
               Get In Touch
             </button>
             <button
-              onClick={() => scrollToSection('about')}
+              onClick={() => scrollToSection('projects')}
               className="px-8 py-3 border border-gray-600 rounded-full font-semibold hover:border-blue-400 hover:text-blue-400 transform hover:scale-105 transition-all duration-300"
             >
-              Learn More
+              View Projects
             </button>
           </div>
         </div>
@@ -190,6 +193,127 @@ function App() {
         </div>
       </section>
 
+      {/* Live Projects Showcase */}
+      <section id="projects" className="py-20 px-6 bg-gradient-to-br from-gray-900 via-blue-900/10 to-purple-900/10 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-10 left-10 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-emerald-400 bg-clip-text text-transparent">
+                Live Projects
+              </span>
+            </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full mb-6"></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Explore my production-ready applications serving real users with cutting-edge technology and seamless user experiences.
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* HIdentity Project */}
+            <div className="group relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-emerald-500 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+              <div className="relative bg-gray-900/90 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-500 transform hover:scale-[1.02]">
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                    <Shield className="w-8 h-8 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-1">HIdentity</h3>
+                    <p className="text-blue-400 font-semibold">Identity Verification Platform</p>
+                  </div>
+                </div>
+                
+                <p className="text-gray-300 mb-6 leading-relaxed">
+                  A comprehensive identity verification and event management system built with PHP & MySQL. 
+                  Features secure QR-based authentication, trust scoring algorithms, and real-time verification dashboards.
+                </p>
+                
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {['PHP', 'MySQL', 'REST APIs', 'QR Authentication', 'Real-time Processing'].map((tech, index) => (
+                    <span key={index} className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium border border-blue-500/30">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                
+                <a 
+                  href="https://hidentity.in/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl font-semibold text-white hover:from-blue-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl group"
+                >
+                  <span>Explore Platform</span>
+                  <ExternalLink className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                </a>
+              </div>
+            </div>
+            
+            {/* HIdentity Nexus Project */}
+            <div className="group relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 via-emerald-500 to-blue-500 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+              <div className="relative bg-gray-900/90 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 hover:border-purple-500/50 transition-all duration-500 transform hover:scale-[1.02]">
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-emerald-500 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                    <Network className="w-8 h-8 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-1">HIdentity Nexus</h3>
+                    <p className="text-purple-400 font-semibold">Advanced Identity Network</p>
+                  </div>
+                </div>
+                
+                <p className="text-gray-300 mb-6 leading-relaxed">
+                  Next-generation identity management platform with enhanced networking capabilities. 
+                  Integrates advanced verification algorithms, multi-layer security protocols, and seamless user experience design.
+                </p>
+                
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {['Advanced PHP', 'Security Protocols', 'Network Integration', 'Multi-layer Auth', 'Enhanced UX'].map((tech, index) => (
+                    <span key={index} className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm font-medium border border-purple-500/30">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                
+                <a 
+                  href="https://hidentitynexus.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-emerald-500 rounded-xl font-semibold text-white hover:from-purple-600 hover:to-emerald-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl group"
+                >
+                  <span>Visit Nexus</span>
+                  <ExternalLink className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          {/* Project Stats */}
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="text-center p-6 bg-gray-800/30 rounded-xl border border-gray-700/50 backdrop-blur-sm">
+              <div className="text-3xl font-bold text-blue-400 mb-2">2</div>
+              <div className="text-gray-300 font-medium">Live Projects</div>
+            </div>
+            <div className="text-center p-6 bg-gray-800/30 rounded-xl border border-gray-700/50 backdrop-blur-sm">
+              <div className="text-3xl font-bold text-emerald-400 mb-2">100%</div>
+              <div className="text-gray-300 font-medium">Uptime</div>
+            </div>
+            <div className="text-center p-6 bg-gray-800/30 rounded-xl border border-gray-700/50 backdrop-blur-sm">
+              <div className="text-3xl font-bold text-purple-400 mb-2">24/7</div>
+              <div className="text-gray-300 font-medium">Available</div>
+            </div>
+            <div className="text-center p-6 bg-gray-800/30 rounded-xl border border-gray-700/50 backdrop-blur-sm">
+              <div className="text-3xl font-bold text-yellow-400 mb-2">Secure</div>
+              <div className="text-gray-300 font-medium">& Scalable</div>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* About Section */}
       <section id="about" className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
