@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #111827;
+  color: white;
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.typing-animation {
+  display: inline-block;
+  border-right: 3px solid #3B82F6;
+  white-space: nowrap;
+  animation: typing 3s steps(40, end), blink-caret 1s step-end infinite;
+  overflow: hidden;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #3B82F6 }
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #3B82F6, #8B5CF6, #10B981);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+}
+
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.skill-bar {
+  height: 8px;
+  background: linear-gradient(90deg, #3B82F6, #8B5CF6);
+  border-radius: 4px;
+  transform-origin: left;
+  animation: fill-bar 2s ease-out;
+}
+
+@keyframes fill-bar {
+  from { transform: scaleX(0) }
+  to { transform: scaleX(1) }
+}
+
+.floating-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) }
+  50% { transform: translateY(-20px) }
+}
+
+.section-enter {
+  animation: slide-in-bottom 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.glass-effect {
+  background: rgba(31, 41, 55, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.neon-glow {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  border: 1px solid rgba(59, 130, 246, 0.5);
+}
+
+.pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1F2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3B82F6, #8B5CF6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #2563EB, #7C3AED);
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  .typing-animation {
+    font-size: 1.25rem;
+  }
+}
+
+/* Button animations */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+  z-index: -1;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+/* Timeline connector */
+.timeline-connector {
+  position: relative;
+}
+
+.timeline-connector::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 2px;
+  height: 50px;
+  background: linear-gradient(180deg, #8B5CF6, transparent);
+  transform: translateX(-50%);
+}
+
+/* Skill category animations */
+.skill-category {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.skill-category:nth-child(1) { animation-delay: 0.1s; }
+.skill-category:nth-child(2) { animation-delay: 0.2s; }
+.skill-category:nth-child(3) { animation-delay: 0.3s; }
+.skill-category:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fade-in-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Contact card animations */
+.contact-card {
+  transform: translateX(-30px);
+  opacity: 0;
+  animation: slide-in-left 0.6s ease-out forwards;
+}
+
+.contact-card:nth-child(1) { animation-delay: 0.1s; }
+.contact-card:nth-child(2) { animation-delay: 0.2s; }
+.contact-card:nth-child(3) { animation-delay: 0.3s; }
+.contact-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slide-in-left {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
